@@ -142,7 +142,7 @@ Otherwise, you need to identify the correct network adapter to assign the IP add
 On both nodes, check the list of currently active IP addresses.
 
 ```sh
-ip -o -f inet address show | '/scope global/ {print $2, $4}'
+ip -o -f inet address show | awk '/scope global/ {print $2, $4}'
 ```
 {: pre}
 
